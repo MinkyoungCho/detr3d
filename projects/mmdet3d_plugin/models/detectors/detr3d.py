@@ -35,6 +35,7 @@ class Detr3D(MVXTwoStageDetector):
                              train_cfg, test_cfg, pretrained)
         self.grid_mask = GridMask(True, True, rotate=1, offset=False, ratio=0.5, mode=1, prob=0.7)
         self.use_grid_mask = use_grid_mask
+        self.fp16_enabled = False
 
     def extract_img_feat(self, img, img_metas):
         """Extract features of images."""
